@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script src="https://cdn1.lncld.net/static/js/av-mini-0.6.4.js">
+
+		 
+	</script>
+
+	 <script>
+	 	AV.initialize('Ypm2bpziM6K8MQzeCOwOIsh5-gzGzoHsz', 'C2onfFr7kBaAxb3SYKJsww8P');
+	 	var TestObject = AV.Object.extend('TestObject');
+		var testObject = new TestObject();
+		  testObject.save({
+		    testabc: 'abc123'
+		  }).then(function() {
+		    alert('LeanCloud works!');
+		  }).catch(function(err) {
+		    alert('error:' + err);
+		  });
+	</script>
+</body>
+</html>

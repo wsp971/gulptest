@@ -1,0 +1,12 @@
+{
+  "name": "gulptest",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-sequence": "^0.4.5",
+    "gulp-uglifyjs": "^0.6.2",
+    "text": "git://github.com/requirejs/text.git",
+    "underscore": "^1.8.3"
+  }
+}
