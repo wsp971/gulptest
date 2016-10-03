@@ -5,25 +5,23 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="infoContainer"></div>
-    <div id="event" style="color:yello;background-color: red">点我一下</div>
+    <h1>测试h1</h1>
+    <p>测试页面</p>
+    <ul id="template">
+        <%=name%>
+    </ul>
+
+
+
     <script type="text/javascript" src="../js/lib/require.js"></script>
     <script type="text/javascript" src="../js/lib/require-config.js"></script>
     <script type="text/javascript">
         (function(){
-            require(['js/modules/test'],function(test){
-                new test();
-            });
+            requirejs.config({baseUrl:"../"});
+            require(["js/modules/index"]);
+            
         })()
 
     </script>
-    <script type="text/template" id="info">
-          <%=name%>
-    </script>
-
 </body>
 </html>
-
-
-
-

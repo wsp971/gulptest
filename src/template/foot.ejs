@@ -1,0 +1,47 @@
+<!--底部开始-->
+<div class="foot">
+    <div class="foot-db">
+        <!--
+        <div class="foot-dh">
+                <ul>
+                    <li><a href="#">关于同业平台</a><span class="foot-mg">|</span></li>
+                    <li><a href="#">如何加入</a><span class="foot-mg">|</span></li>
+                    <li><a href="#">成功案例</a><span class="foot-mg">|</span></li>
+                    <li><a href="#">帮助中心</a><span class="foot-mg">|</span></li>
+                    <li><a href="#">网站声明</a><span class="foot-mg">|</span></li>
+                    <li><a href="#">网站地图</a></li>
+                </ul>
+            </div>
+        -->
+        <div class="foot-bq">
+            <p class="foot-cennt">版权所有©深圳平安金融科技咨询有限公司未经允许可不可复制、转载或者摘编，违者必究</p>
+            <p class="foot-cennt">Copyright © PingAn Bank CO.Ltd.All Rights Reserved</p>            
+        </div>
+    </div>
+</div>
+<!--底部结束-->
+
+<!-- loading 开始 -->
+<div class="ui-loading" style="width: 100%; height: 100%;"><div class="ui-loading-mask"></div><div class="ui-loading-img-wrap"><div class="ui-loading-img"><img src="<@= ctx @>statics/img/loading.gif" alt=""></div><span id="text">请稍候...</span></div></div>
+<!-- loading 结束 -->
+    <script type="text/javascript">
+    var _context = {
+        env : "<@= _build.env @>",
+        ctx : "<@= ctx @>",
+        version:"<@= _build.version @>",
+        ts:"<@= _build.ts @>",
+        name:"app"
+    };
+    (function(){        
+        requirejs.config({baseUrl:"<@= ctx @>"});
+        <@ if(data.main){ @>
+            <@ if(data.main instanceof Array){ _.each(data.main,function(item){@>
+            require(["<@= item @>"]);
+            <@ })}else{ @> 
+                require(["<@= data.main @>"]);
+            <@} @>
+        <@ }else{ @>require(["C"])<@ } @>
+    })();
+    </script>
+</body>
+</html>

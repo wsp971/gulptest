@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            .container{
+                width:400px;
+                min-height: 400px;
+                background-color: #ccc;
+                margin: 20px  auto;
+                position: relative;
+            }
+            .wrap{
+                width:200px;
+                position:relative;
+            }
+            .block{
+                width:200px;
+                height: 200px;
+                position:absolute;
+                top:0;
+                left:0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                background-color: #aaa;
+            }
+            .block1{
+                width:200px;
+                height: 200px;
+                margin-top:-100px;
+                margin-left: -100px;
+                position:absolute;
+                top:50%;
+                left:50%;
+                background-color: #aaa;
+            }
+            .block2{
+                position:fixed;
+                margin: auto;
+                width:200px;
+                height: 200px;
+                left: 0;
+                right: 0;
+                top: 0;
+                background-color: #bbb;
+                bottom:0;
+            }
+            .block3{
+                width: 100px;
+                height: 200px;
+                overflow: auto;
+                background-color: #abc;
+            }
+            body{
+                width:100%;
+                overflow-y: hidden;
+            }
+            html{
+                overflow-y: scroll;
+                overflow-x:hidden;
+            }
+            .block4{
+                width:3000px;
+                height: 300px;
+                background-color: #404040;
+            }
+            .block5{
+                width:inherit;
+                height: 200px;
+                background-color: #202020;
+            }
+
+            .block6{
+                width:200px;
+                height: 200px;
+                background-color: #ffff00;
+                transition: width 2s;
+            }
+
+            .block6:hover{
+                width:300px;
+                height:300px;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="block5"></div>
+    <div class="container">
+        <div class="block">
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="block1">
+            
+        </div>
+    </div>
+    <div class="block2"></div>
+    <div class="block3">
+        pdsjkfjasklfjsakdljfaslkjdfksdjfklsdjflsadjksajdfasdjfksdjfksjdfaskdfjasljfksljfkasljfksfjksdfjksadjf;asjfkdlsjflsjfksdljflk
+    </div>
+    <div class="block4"></div>
+
+    <div class="block6">
+
+    </div>
+
+    <script type="text/javascript">
+
+        // var loop=function (){
+        //     var t1=new Date().getTime();
+
+        //     console.log("start loop t1---->"+t1);
+        //     for(var i=0;i<10000000000;i++){
+        //     }
+        //     var t2=new Date().getTime();
+        //     console.log("end loop t2---->"+t2);
+        //     console.log(t2-t1);
+        // };
+
+       // setInterval('loop()',3000);
+
+       // setTimeout('loop()',1000);
+
+       var intervalArray=[];
+       function loop(){
+            var t1=new Date().getTime(),i=0;
+            console.log("start t1---->"+t1);
+            console.log('t1-t0='+(t1-t0));
+            for(;i<10000000000;i++){
+            }
+            var t2=new Date().getTime();
+            console.log("end t2---->"+t2);
+            console.log("t2-t1="+(t2-t1));
+            console.log("t2-t0="+(t2-t0));
+            setTimeout('loop()',100);
+       }
+       var t0=new Date().getTime();
+
+       // var t1=setInterval('loop(t1)',10);
+       
+       // intervalArray.push(t1);
+
+
+
+
+
+       // loop();
+
+       count=0;
+
+
+
+
+
+       // setInterval(function(){var i = 0;for(;;){i++;if(i>100000000000) break}},1)
+
+       // function Count(){
+       //      console.log(count++);
+       //      setTimeout(arguments.callee,1000);
+       // }
+       //  Count();
+
+
+       // var t1=new Date().getTime();
+       // console.log("start t1---->"+t1);
+       // for(var i=0;i<100000000;i++){
+       // }
+       // var t2=new Date().getTime();
+       // console.log("end t2---->"+t2);
+       // console.log(t2-t1);
+
+
+
+
+
+       // count=0;
+       // function callerShow(){
+       //      if(count>10) return;
+       //      console.log(count++);
+       //      arguments.callee.call(this);
+       // }
+
+       // callerShow();
+
+       // (function w (){
+       //      console.log(count++);
+       //      setTimeout(arguments.callee,1000);
+       // })();
+
+        
+        // setTimeout(function(){
+        //     console.log(count++);
+        //     setTimeout(arguments.callee,1000);
+        // },1000)
+        
+
+
+
+
+
+        // setTimeout(function(){
+
+
+        // },1000)
+
+        // var t1=new Date().getTime();
+
+        // // setTimeout('alert("hello world")',1000);
+        // // setInterval('alert("hello world")',1000);
+
+        //    for(var i=0;i<1000000000;i++){
+        //    }
+        // var t2=new Date().getTime();
+        // // alert(t2-t1);
+        // console.log(t2-t1);
+
+
+
+
+       
+
+    </script>
+    <script >
+        function cookieStorage(maxage,path){
+           // var cookie=(function(){
+           //      var cookies={};
+           //      var all=document.cookie;
+           //      if(all===""){
+           //          return cookies;
+           //      }
+           //      var list=all.split(";");
+           //      for(var i=0;i<list.length;i++){
+           //          var cookie=list[i];
+           //          var p=cookie.indexOf("=");
+           //          var name=cookie.substring(0,p);
+           //          var value=cookie.substring(p+1);
+           //          value=decodeURIComponent(value);
+           //          cookies[name]=value;
+           //      }
+           //      return cookies;
+           //  })();
+           var cookie={name:"wsp"};
+           var keys=[];
+           for(var key in cookie){keys.push(key);}
+
+           this.length=keys.length;
+
+           this.key=function(n){
+                if(n<0||n>keys.length){return null;}
+                return keys[n];
+           } 
+           this.getItem=function(name){
+                return cookie[name]||null;
+           }
+           this.setItem=function(key,value){
+                console.log(JSON.stringify(cookie));
+                if (!(key in cookie)){
+                    console.log("asdfasf");
+                    keys.push(key);
+                    // this.length++;
+                }
+                cookie[key]=value;
+                var cookie_one=key+"="+ encodeURIComponent(value);
+                if(maxage) cookie_one+=";max-age="+maxage;
+                if(path) cookie_one+=";path="+path;
+                document.cookie=cookie_one;
+
+                console.log("asdf");
+                // if(!(key in cookie)){
+                //     keys.push(key);
+                //     this.length++;
+                // }
+                // cookie[key]=value;
+
+                // var cookie=key+"="+ encodeURIComponent(value);
+                // if(maxage) cookie+=";max-age="+maxage;
+                // if(path) cookie+=";path="+path;
+                // document.cookie=cookie;
+           }
+           this.removeItem=function(key){
+                if(!(key in cookie)){
+                    return;
+                }
+
+                delete cookie[key];
+
+                for(var i=0;i<keys.length;i++){
+                    if(keys[i]===key){
+                        keys.splice(i,1);
+                        break;
+                    }
+                }
+
+                document.cookie=key + "=;max-age=0";
+
+           }
+           this.clear=function(){
+                for(var i=0;i<keys.length;i++){
+                    document.cookie=keys[i]+"=;max-age=0";
+
+                }
+                cookie={};
+                keys=[];
+                this.length=0;
+           }
+           this.cookies=function(){
+                console.log(JSON.stringify(cookie));
+           }
+           return this;
+        }
+
+        var mycookie=new cookieStorage(3*24*60*60,"/");
+
+        mycookie.setItem("name","wsp");
+        // mycookie.cookies();
+
+
+        function test(){
+            var a="a";
+            this.reaturna=function(){
+                console.log(a);
+            }
+            return this;
+        }
+    </script>
+</body>
+</html>

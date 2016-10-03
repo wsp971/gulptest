@@ -1,0 +1,1 @@
+define(["modules/index/indexController"],function(e){new e}),define(["jquery","underscore","commonView","text!modules/index/template/foot.html"],function(e,n,o,t){var l=require(["text!modules/index/template/head.html"]);return o.extend({init:function(){alert("hha"),console.log(t),console.log(l)}})});

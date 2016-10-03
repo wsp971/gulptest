@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .form  {
+            width:500px;
+            border:1px solid #ccc;
+            height:1000px;
+        }
+        ul{
+            list-style: none;
+        }
+        ul>li{
+            /*float:left;*/
+            width:400px;
+            height:40px;
+            text-align: left;
+            margin: 10px 0;
+            
+        }
+        ul>li div{
+            float:left;
+            width:100px;
+            margin-right: 20px;
+            padding:5px;
+
+        }
+        input{
+            width:200px;
+            height:30px;
+        }
+        input[type='submit']{
+            width:100px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="form">
+        <form>
+            <ul>
+                <li>
+                        <div><span>email:</span></div>                    
+                        <input type="email" autocomplete="on" required="required">
+                </li>
+                <li>
+                        <div><span>url:</span></div>
+                        <input type="url" autofocus="autofocus" required>
+                </li>
+                <li>
+                        <div><span>数字:</span></div>
+                        <input type="number" min="1" max="10" step="3" value="1" >
+                </li>
+                <li>
+                        <div><span>滑动数字:</span></div>
+                        <input type="range" min="1" max="10" >
+                </li>
+                <li>
+                        <div><span>日期:</span></div>
+                        <input type="datetime-local">
+                </li>
+                <li>
+                        <div><span>搜索:</span></div>
+                        <input type="search" placeholder="请输入搜索关键字">
+                </li>
+
+                <li><input type="submit"></li>
+            </ul>
+        </form>
+
+    </div>
+
+
+</body>
+</html>

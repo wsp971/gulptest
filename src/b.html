@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe</title>
+    <style>
+        div#test{
+            width:1200px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: #123456;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        
+    </div>
+    <script>
+        window.onload=function(){
+            alert("child");
+            if(top!==self){
+                window.test3="sadfasfsaf";
+            }
+
+        }
+        function getParent(){
+            var fromParent=window.parent.fromParent;
+            console.log(fromParent);
+        }
+        var a="a";
+    </script>
+
+</body>
+</html>

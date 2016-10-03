@@ -1,0 +1,97 @@
+div{
+    width:200px;
+    height: 200px;
+    border:1px solid #ccc;
+}
+div.div1{
+    width:300px;
+    height:300px;
+    border:2px solid #ccc;
+    border-radius:25px;
+    --moz-border-radius: 25px;
+    --webkit-border-radius:25px;
+    text-align: center;
+}
+.div2{
+    background-color: #ff9900;
+    box-shadow: 5px 5px 10px #888;
+}
+.div3{
+    background: url("../img/Lighthouse.jpg");
+    background-repeat: no-repeat;
+    /*-webkit-background-size: 100% 100%;*/
+    /*background-size: 100% 100%;*/
+    -webkit-background-origin: border-box;
+    background-origin: border-box;
+    background-clip: border-box;
+    padding: 100px;
+    border:100px dashed red;
+}
+body{
+    margin: 0;
+   
+}
+hr{
+    margin:20px  auto;
+}
+.shadow{
+    text-shadow: 5px 5px 3px #ff9900;
+}
+.word_wrap{
+    word-wrap: break-word;
+    width:100px;
+}
+.div4{
+    width:100px;
+    height: 100px;
+    /*transform:totate(30deg);*/
+    -moz-transform: rotate(30deg);    /*firefox*/
+    -ms-transform:rotate(30deg);               /*ie*/
+    -webkit-transform: rotate(30deg);  /*safari and chrome*/
+    -o-transform:rotate(30deg);            /*opera*/
+
+}
+.div5{
+    width:100px;
+    height: 100px;
+    transform:rotate(9deg);
+    -ms-transform:rotate(9deg); /* Internet Explorer */
+    -moz-transform:rotate(9deg); /* Firefox */
+    -webkit-transform:rotate(9deg); /* Safari 和 Chrome */
+    -o-transform:rotate(9deg); /* Opera */
+}
+.container{
+    margin: 0 auto;
+    position: relative;
+    border:0px;
+    width:300px;
+    height: 300px;
+}
+.zhuanpan{
+    background: url("../img/zhuanpan1.jpg");
+    width:300px;
+    height: 300px;
+    border:0px;
+    background-size: 100% 100%;
+    /*trasform:rotate(30deg);*/
+    /*-webkit-transform:rotate(9deg); /* Safari 和 Chrome */*/
+}
+.zhizhen{
+    position: absolute;
+    top:71px;
+    left: 111px;
+    background: url("../img/start.png");
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    width:80px;
+    height: 112px;
+    border:0px;
+    cursor: pointer;
+}
+.zhizhen:hover{
+    /*box-shadow:  10px 10px 5px #888888*/
+}
+.div6{
+    width:600px;
+    height:600px;
+}

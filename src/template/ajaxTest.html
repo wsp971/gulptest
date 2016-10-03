@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>点击发送ajax请求：</p>
+    <button id="post">post</button><br>
+    <button id="get">get</button><br>
+    <script type="text/javascript" src="">
+        var base_dir="../";
+    </script>
+
+    <p>测试表单：</p>
+    <form method="post">
+        姓名：<input type="text" id="name"><br>
+        说一句话：<input type="text" id="say">
+        <input type="submit" value="提交">   
+    </form>
+    <script type="text/javascript" src="../js/lib/mylib.js"></script>
+    <script type="text/javascript">
+        var postButton=document.getElementById("get");
+        var host="http://fic-opr-stg.paic.com.cn";
+        var url=host+"/fic_opr/work/institution/queryInstitutionList?currentPage=1&pageSize=15&orderType=2&orderColumn=id&type=1";
+        postButton.addEventListener("click",function(e){
+            window.$.getText(url,{
+                dataType:"application/json",
+                callback:function(res){ alert(res);}
+            });
+        });
+        var formButtons=document.getElementsByTagName("input");
+
+        for(i in formButtons){
+            if(formButtons[i].type=="submit"){
+                formButtons[i].addEventListener("click",function(e){
+                    var name=document.getElementById("name").value;
+                    var say=document.getElementById("say").value;
+                    $.postData(url,{"name":name,"say":say},function(xhr){
+                        debugger;
+                    });
+                })
+            }
+        }
+        var postButton=document.getElementById("post");
+        postButton.addEventListener("click",function(){
+            
+        });
+
+    </script>
+
+</body>
+</html>

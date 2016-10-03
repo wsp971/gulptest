@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gulp test</title>
+
+    <style type="text/css">
+
+        html,body,div{
+         /*  -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;*/
+           box-sizing: border-box;
+        }
+        html,body,ul,ol,h1,h2,h3,h4,h5{
+            margin:0;
+            padding:0;
+        }
+        
+        body{
+            font-size: 14px;
+            font-family: sans-serif;
+        }
+
+        .clearfloat{
+            zoom:1;
+        }
+        .clearfloat:after{
+            display: block;
+            content: "";
+            visibility: hidden;
+            clear: both;
+            height: 0;
+        }
+        .header{
+            height:50px;
+            background-color: #ccc;
+        }
+        .container{
+            width:1200px;
+            overflow: auto;
+            background-color: #fff;
+            margin: 0 auto;
+        }
+        .m_t10{
+            margin-top: 10px;
+        }
+        .sidebar{
+            float:left;
+            width:180px;
+            min-height: 200px;
+            /*max-height: 300px;*/
+            background-color: #dfdfdf;  
+        }
+        .main{
+            /*float:right;*/
+            width:1000px;
+            margin-left: 200px;
+            display:block;
+            height:100%;
+            background-color: #909090;
+            background-clip:#909090\0;
+            height:500px;
+        }
+        .list{
+            border:1px solid #ccc;
+        }
+        .list>li{
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            font-size: 20px;
+            background-color: #fff;
+            border: 1px solid #eee;
+        }
+        .list>li:hover{
+            background-color: #dfdfdf;
+            cursor: pointer;
+        }
+        .list>li> a{
+            text-decoration: none;
+            color:#000;
+        }
+        .test1{
+            width:800px;
+            /*height: 500px;*/
+            border:1px solid #ddd ;
+            float:left;
+            font-size: 0;
+        }
+        .test2{
+            width:100px;
+            height: 100px;
+            background-color: red;
+            /*border: 1px solid #000;*/
+            /*float:left;*/
+            /*box-sizing: content-box;*/
+
+        }
+        .test3{
+            width:100px;
+            height:100px;
+            background-color: blue;
+            border:1px solid #aaa;
+            display:inline;
+        }
+        span{
+            width:1000px;
+            height:200px;
+            background-color: #aaa;
+        }
+        .test4{
+            width:100px;
+            height:100px;
+            display:inline-block;
+            background-color: green;
+        }
+        .sideTitle{
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+        }
+
+
+        #div1 {box-sizing:border-box; height:100px; width:100px; background:red; margin:10px; border:1px solid #000; padding:20px;}
+        #div2 {box-sizing:content-box; height:100px; width:100px; background:red; margin:10px; border:1px solid #000; padding:20px;}
+         
+        
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <div class="header">
+        <h2 >gulp test</h2>
+    </div>
+    <div class="container m_t10 clearfloat">
+        <div class="sidebar">
+            <h2 class="sideTitle">功能列表</h3>
+            <ul class="list ">
+                <li>
+                    <a href="">测试一</a>
+                </li>
+                <li>
+                    <a href="">测试二</a>
+                </li>
+                <li>
+                    <a href="">测试三</a>
+                </li>
+                <li>
+                    <a href="">测试四</a>
+                </li>
+                <li>
+                    <a href="">测试四</a>
+                </li>
+                <li>
+                    <a href="">测试四</a>
+                </li>
+                <li>
+                    <a href="">测试四</a>
+                </li>
+                <li>
+                    <a href="">测试四</a>
+                </li>   
+            </ul>
+            <div class="list m_t10">
+                <h1>第二模块</h1>
+                <div class="test2">
+
+                </div>
+            </div>
+
+
+            <div id="div1">border-box</div>
+            <div id="div2">content-box</div>
+        </div>
+
+        <!-- <div class="main"> -->
+        <iframe class="main" id="mainContainer" frameborder="0" src="./b.html" marginheight="0" marginwidth="0" onload="">
+
+
+        </iframe>
+
+        <!-- </div> -->
+
+
+    
+
+       <!--  <div class="test1">
+            <div class="test2">div1</div>
+            <div class="test2" style="float:left;">div2</div>
+            <div class="test2">div3</div>
+        </div>
+
+        <div class="test1">
+
+            <div class="test3">asdfasdfasdf</div>
+            <div class="test3">asdfasdfasdfasd</div>
+            <div class="test3">asdfasfasdfdas</div>
+            <span>sdfasdkfjasdklfjasdk</span>
+        </div>
+
+        <div class="test1">
+            <div class="test4"></div>
+            <div class="test4"></div>
+            <div class="test4"></div>
+        </div>
+        <div class="test1">
+            asdfasdfasdfasd
+        </div> -->
+
+    </div>
+    <script type="text/javascript">
+        function move(element,fangxiang,distance,time){
+            var per_distance=distance*20/time
+            var initialize_margin=Number(element.style.marginLeft.slice(0,-2));
+            var to_margin= fangxiang==="left"? initialize_margin-distance:initialize_margin+distance;
+            var timer=setInterval(function(){
+                var marginLeft=element.style.marginLeft;
+                var ml_num=Number(marginLeft.slice(0,-2));
+                if(fangxiang==="left"){
+                    element.style.marginLeft=(ml_num-per_distance)>to_margin?(ml_num-per_distance)+"px":to_margin+"px";
+                    if(ml_num-per_distance<=to_margin) clearInterval(timer);
+                }
+                else{
+                    element.style.marginLeft=(ml_num+per_distance)<to_margin?(ml_num+per_distance)+"px":to_margin+"px";
+                    if(ml_num+per_distance>=to_margin) clearInterval(timer);
+                }
+            },20);
+        }
+
+        var test2=document.getElementsByClassName("test2")[0];
+        // move(test2,"right",78,2000);
+        var flag=false;
+
+        function yaobai(){
+            if(!flag){
+                move(test2,"right",78,2000);
+            }else{
+                move(test2,"left",78,2000);
+            }
+            flag=!flag;
+            setTimeout('yaobai()',3000);
+            // yaobai(flag);
+        }
+        // yaobai();
+        // (function(){
+        //     if(!flag){
+        //         move(test2,"right",78,2000);
+        //     }else{
+        //         move(test2,"left",78,2000);
+        //     }
+        //     flag=!flag;
+        //     setTimeout(arguments.callee,2000);
+
+        // })();
+        
+        // setInterval(function(){
+        //     if(Number(test2.style.marginLeft.slice(0,-2))>)
+
+        // },2000);
+        
+        window.onload=function(){
+            alert("parent");
+            var iframe=document.getElementById("mainContainer");
+            window.fromParent="this is a parent veribal";
+            // console.log(iframe.contentWindow.pageb);
+            // console.log(window.test3);
+            iframe.contentWindow.getParent&&iframe.contentWindow.getParent();
+            setSize();
+        }
+        function setSize(){
+            var iframe=document.getElementById("mainContainer");
+            iframe.width=iframe.contentWindow.document.body.scrollWidth;
+            iframe.height=iframe.contentWindow.document.body.scrollHeight;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <link rel="stylesheet" type="text/css" href="../static/css/css3.css">
+    <script type="text/javascript" src="../js/lib/css3support.js"></script>
+</head>
+<body>
+    <div class="div1">圆角框</div>
+    <hr>
+    <div class="div2"></div>
+    <hr>
+    <div class="div3"></div>
+    <hr>
+    <h1 class="shadow">文本阴影效果</h1>
+    <hr>
+    <p class="word_wrap">
+        This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.
+    </p>
+    <p> This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+    <hr>
+    <div class="div4">
+        hello world
+    </div>
+    <hr>
+    <div class="container">
+        <div class="zhuanpan">
+           
+        </div>
+        <div class="zhizhen"></div>
+    </div>
+    <hr>
+    <div class="div6 container">
+        
+    </div>
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript">
+        var speed=9;/*reg/100ms*//*z转速*/
+        function rotate(element,reg){
+            $(element).css({
+                'webkit-transform':'rotate('+reg+'deg)',
+                '-moz-transform':'rotate('+reg+'deg)',
+                '-o-transform':'rotate('+reg+'deg)',
+                '-ms-transform':'rotate('+reg+'deg)'
+            });
+        }
+        function random (){
+            var randomnum=Math.random();
+            return randomnum*720;
+        }
+        flag=false;
+        $(".zhizhen").click(function(){
+            if(flag){return;}
+            flag=true;
+            var regs= random();
+            console.error(regs);
+            stepreg=0;
+            var element=$(".zhuanpan")[0];
+            var run=setInterval(function(){
+                if(regs>0){
+                    stepreg+=speed;
+                    rotate(element,stepreg);
+                    regs-=speed;
+                }else{
+                    clearInterval(run);
+                    flag=false;
+                }
+            },100);
+        });
+
+    </script>
+
+
+    
+
+</body>
+</html>
