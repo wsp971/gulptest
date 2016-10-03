@@ -53,7 +53,6 @@ gulp.task('build',function(){
 
 
 gulp.task('ejs',function(){
-
     console.log('ejs 模板编译task');
     return  gulp.src('./src/template/test.ejs').pipe(ejs(
         {testInfo:"王世平",
