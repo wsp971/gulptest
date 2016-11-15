@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    输入项：<input type="text" style="width:200px;height:30px" id="inputTest">
+
+
+
+    <script>
+
+    var n=0;   
+    function resizeHandle(){
+        console.log(new Date().getTime());
+        console.log(++n);
+    }
+
+
+    function throttle(method,context){
+        clearTimeout(method.methodId);
+        method.methodId=setTimeout(function(){
+            method.call(context);
+        },500);
+        console.log(new Date().getTime());
+    }
+    // window.onresize=resizeHandle;
+
+
+    function throttle2(method,delay){
+        var timer=null;
+        var context=this, args=arguments;
+        return function(){
+            clearTimeout(timer);
+            timer=setTimeout(function(){
+                method.apply(this,args);
+            },delay);
+        }
+    }
+    
+    window.onresize=function(){
+
+        throttle(resizeHandle,500);
+    }
+    
+    
+    // window.onresize=throttle(resizeHandle,window);
+
+    function alert_func(a,b){
+        console.log(new Date().getTime());
+    }
+
+    function throttle3(method,delay,timeLength){
+        var timer=null;
+        var context=this, args=arguments;
+        var start=new Date().getTime();
+        return function(){
+            current=new Date().getTime();
+            if(current-start>=timeLength){   // 如果时间间隔已经大于了设置的时间间隔，那么强制执行方法
+                method.apply(context,args);
+                start=current;
+            }else{
+                clearTimeout(timer);
+                timer=setTimeout(function(){
+                    method.apply(context,args);
+                },delay);
+            }
+        }
+    }
+
+    var input=document.getElementById("inputTest");
+
+    input.onkeyup=throttle3(resizeHandle,500,500);
+
+    </script>
+</body>
+</html>
